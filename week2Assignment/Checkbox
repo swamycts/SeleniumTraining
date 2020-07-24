@@ -1,0 +1,66 @@
+package week2.day2;
+
+
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Assignment1CheckBox {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("http://leafground.com/pages/checkbox.html");
+		driver.manage().window().maximize();
+		
+		//driver.findElementByXPath("//div[contains(text(),'Java')]/input").click();
+		driver.findElementByXPath("//div[contains(text(),'VB')]/input").click();
+		
+		boolean chk = driver.findElementByXPath("//div[contains(text(),'Selenium')]/input").isSelected();
+		if (chk == true){
+			System.out.println("its checked");
+		}
+			else
+			System.out.println("not checked");
+		
+		//System.out.println(driver.findElementByXPath("//div/label[contains(text(),'DeSelect')]").getText());
+		
+		boolean boo1 = driver.findElementByXPath("//div[contains(text(),'Not Selected')]/input").isSelected();
+		if (boo1 == true){
+			driver.findElementByXPath("//div[contains(text(),'Not Selected')]/input").click();
+		}
+		else
+			System.out.println("not selected");
+			
+		boolean boo2 = driver.findElementByXPath("//div[contains(text(),'I am Selected')]/input").isSelected();
+        System.out.println(boo2);
+                
+		if (boo2 == true)
+		{
+			System.out.println(boo2);
+			driver.findElementByXPath("//div[contains(text(),'I am Selected')]/input").click();
+		}
+		else
+			System.out.println("not checked");
+		
+		List<WebElement> list1 = driver.findElementsByXPath("//div[contains(text(),'Option')]");
+		System.out.println(list1.size());
+		
+		//driver.findElementByXPath("//div[contains(text(),'Option 2')]//input").click();
+		
+		
+		for(int i=1; i<=list1.size(); i++)
+		{
+			String xpathVariable = "(//div[contains(text(),'Option " + i + "')]//input"; 
+					
+            driver.findElement(By.xpath(xpathVariable)).click(); 
+		}
+		
+		
+		
+	}
+
+}
