@@ -54,7 +54,7 @@ public class Assignment1CheckBox {
 		
 		for(int i=1; i<=list1.size(); i++)
 		{
-			String xpathVariable = "(//div[contains(text(),'Option " + i + "')]//input"; 
+			String xpathVariable = "(//div[contains(text(),'Option " + i + "')]//input)"; 
 					
             driver.findElement(By.xpath(xpathVariable)).click(); 
 		}
