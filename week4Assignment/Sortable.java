@@ -19,24 +19,26 @@ public class Sortable {
 		driver.get("https://jqueryui.com/sortable/");
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
-		WebElement myFrame = driver.findElementByXPath("//iframe[@class='demo-frame']");
-		driver.switchTo().frame(myFrame);
+		/*WebElement myFrame = driver.findElementByXPath("//iframe[@class='demo-frame']");
+		driver.switchTo().frame(myFrame);*/
 		
+		driver.switchTo().frame(0);
 		Thread.sleep(2000);
 		
-		WebElement source = driver.findElementByXPath("//li[contains(text(),'Item 1')]");
-		//WebElement target = driver.findElementByXPath("//li[contains(text(),'Item 4')]");
+		WebElement item1 = driver.findElementByXPath("//ul[@id='sortable']/li[1]");
+		//WebElement item2 = driver.findElementByXPath("//ul[@id='sortable']/li[2]");
+		//WebElement item3 = driver.findElementByXPath("//ul[@id='sortable']/li[3]");
+		WebElement item4 = driver.findElementByXPath("//ul[@id='sortable']/li[4]");
 		
-		Point location = driver.findElementByXPath("//li[contains(text(),'Item 4')]").getLocation();
-		
+		/*Point location = driver.findElementByXPath("//li[contains(text(),'Item 4')]").getLocation();
 		int x = location.getX();
-		int y = location.getY();
+		int y = location.getY();*/
 		
 		
 		Actions builder = new Actions(driver);
 		//builder.dragAndDrop(source, target).perform();
 		
-		builder.dragAndDropBy(source, x, y).perform();
+		builder.dragAndDrop(item1, item4).perform();
 		Thread.sleep(2000);
 
 		}
