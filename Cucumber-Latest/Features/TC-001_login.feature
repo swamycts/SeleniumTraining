@@ -1,4 +1,4 @@
-Feature: LeafTaps login functionality
+//Feature: LeafTaps login functionality
 
 //Background:
 //Given OpenChrome browser 
@@ -30,14 +30,14 @@ Feature: LeafTaps login functionality
 //|demoCSR|crmsfa|
 
 
-Scenario: TC001_Login with invalid credential
+//Scenario: TC001_Login with invalid credential
 
 //Given OpenChrome browser 
 //Given Load the application URL 
 //And maximise the browser 
 //And apply implicit wait
 
-Given enter the user name as demoCSR 
-And enter the password as crmsfa123 
-When click on login button 
-But error message should be displayed  
+//Given enter the user name as demoCSR 
+//And enter the password as crmsfa123 
+//When click on login button 
+//But error message should be displayed  
